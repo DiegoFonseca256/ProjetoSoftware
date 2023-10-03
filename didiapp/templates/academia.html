@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Diego_Gadelha_Fonseca</title>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 style=" text-align: center;">Treino de Academia</h1>
+  <div class="centro">
+    <div><img src="https://www.elefant.com.br/storage/app/uploads/public/613/0d7/12f/6130d712f2979781229655.jpg"></div>
+    <p>Uma academia é um reduto de superação e transformação pessoal. Nesse ambiente dinâmico, corpos são moldados e habilidades são aprimoradas. Cada repetição, cada esforço é um passo em direção à conquista de metas físicas e mentais. O ritmo acelerado da academia de treinamento é um lembrete constante de que o sucesso é construído através da dedicação e da resiliência. Seja levantando pesos, correndo na esteira ou praticando exercícios funcionais, a academia de treinamento é o palco onde determinação e suor se unem para forjar corpos e mentes mais fortes.
+</p>
+    <p style="font-size: 20px;"><b>Nesse site irei mostrar um treino completo na semana com exercícios para cada parte do corpo</b></p>
+    <ol>
+   {% for treinos in treino %}
+    <h2><li>{{ treinos.titulo }}</li></h2>
+  {% endfor %}
+    </ol>
+  </div>
+  <p><h1>1.Peito</h1></p>
+  <div class="centro"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxr0Tnj7A5mdMiXDfDlB95BxGDQjpiUnVFw&usqp=CAU"></div>
+  <ul>
+    <div class="margem">
+    {% for TreinoPeito in TreinodePeitos %}
+      <li><u>{{ TreinoPeito.titulo }}</u>:{{ TreinoPeito.descricao }}</li>
+    {% endfor %}
+    </div>
+  </ul>
+  <p><h2>2.Costas</h2></p>
+  <div class="centro"><img src="https://i.ytimg.com/vi/LjgpJjr_5Hw/maxresdefault.jpg" width="300"></div>
+  <ul>
+  <div class="margem">
+    {% for TreinoCostas in TreinodeCostas %}
+    <li><u>{{ TreinoCostas.titulo }}</u>:{{ TreinoCostas.descricao}}
+      <a href="treino_de_costas/update/{{ treino_costas.id }}">Atualizar</a>
+      <a href="/treino_de_costas/delete/{{ treino_costas.id }}">Deletar</a>
+    </li>
+    {% endfor %}
+    </ul>
+  </div>
+  <button><a href="/treino_de_costas">Insira um treino de costas aqui</button></a>
+  <p><h2>3.Perna</h2></p>
+  <div class="centro"><img src="https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-muscles-image_2698204.png" width="300"></div>
+  <ul>
+    <div class="margem">
+      <li><u>Agachamento:</u>Fique em pé com os pés afastados na largura dos ombros.
+Mantenha as costas retas e o olhar para a frente.
+Flexione os joelhos e quadris para baixar o corpo, como se estivesse sentando em uma cadeira.
+Mantenha os joelhos alinhados com os pés e evite que passem da linha dos dedos dos pés.
+Volte à posição inicial, estendendo os joelhos e quadris.
+O agachamento trabalha os músculos quadríceps, glúteos e isquiotibiais.</li>
+      <li><u>Levantamento Terra:</u>Fique em pé com os pés na largura dos ombros e uma barra à sua frente.
+Agarre a barra com as mãos um pouco mais afastadas que a largura dos ombros, uma pegada pronada ou mista.
+Mantenha as costas retas e os joelhos levemente flexionados.
+Levante a barra ao mesmo tempo em que estende os quadris e joelhos.
+Baixe a barra de volta ao chão de forma controlada.
+O levantamento terra trabalha os músculos das costas, glúteos, isquiotibiais e também o core.
+</li>
+      <li><u>Leg Press:</u>Sente-se na máquina de leg press com os pés posicionados na plataforma na largura dos ombros.
+Empurre a plataforma para cima, estendendo as pernas.
+Dobre os joelhos para baixar a plataforma de volta, mantendo os pés firmes na plataforma.
+O leg press é ótimo para trabalhar os músculos quadríceps, glúteos e isquiotibiais.</li>
+      <li><u>Cadeira Extensora:</u>Sente-se na máquina de cadeira extensora com os joelhos alinhados com o eixo da máquina e os tornozelos atrás dos rolos.
+Estenda os joelhos para levantar os rolos, mantendo a contração no topo.
+Dobre os joelhos para baixar os rolos de volta à posição inicial.
+Esse exercício isola principalmente os músculos quadríceps.</li>
+      <li><u>Cadeira Flexora:</u>Deite-se de bruços na máquina de cadeira flexora com os rolos atrás dos tornozelos.
+Dobre os joelhos para puxar os rolos em direção aos glúteos, mantendo a contração no topo.
+Estenda os joelhos para voltar à posição inicial.
+O cadeira flexora visa os isquiotibiais.
+Certifique-se de ajustar os pesos e a intensidade de acordo com o seu nível de condicionamento físico e objetivos. Mantenha uma técnica adequada em todos os exercícios para evitar lesões. Se você é novo nesses exercícios, considere a orientação de um instrutor de academia para aprender a execução correta.</li>
+    </div>
+  </ul>
+  <p><h2>4.Ombro</h2></p>
+  <div class="centro"><img src="https://drfernandesjr.com.br/wp-content/uploads/2023/05/entenda-a-lesao-mais-comum-do-ombro-lesao-do-manguito-rotador-22112018083042.jpeg" width="300"></div>
+  <ul>
+    <div class="margem">
+      <li><u>Desenvolvimento Militar:</u>Fique em pé ou sente-se com as costas retas.
+Segure uma barra ou halteres com as mãos um pouco mais afastadas que a largura dos ombros.
+Levante o peso acima da cabeça, estendendo completamente os braços.
+Baixe o peso de volta à altura dos ombros.
+O desenvolvimento militar trabalha os deltoides (músculos do ombro) e os tríceps.</li>
+      <li><u>Elevação Lateral:</u>Fique em pé com os braços ao lado do corpo e um halter em cada mão.
+Levante os braços para os lados, mantendo os cotovelos levemente dobrados.
+Pare quando os braços estiverem paralelos ao chão.
+Baixe os halteres de volta à posição inicial.
+A elevação lateral visa os deltoides laterais.</li>
+      <li><u>Elevação Frontal:</u>Fique em pé com os braços ao lado do corpo e um halter em cada mão.
+Levante os braços à frente, mantendo os cotovelos levemente dobrados.
+Pare quando os braços estiverem na altura dos ombros.
+Baixe os halteres de volta à posição inicial.
+A elevação frontal trabalha os deltoides anteriores.</li>
+      <li><u>Face Pull:</u>Prenda uma corda na polia alta.
+Segure as extremidades da corda com as mãos voltadas para dentro e os cotovelos apontados para cima.
+Puxe a corda em direção ao rosto, mantendo os cotovelos elevados.
+Mantenha a contração no topo e depois retorne à posição inicial.
+O face pull é eficaz para trabalhar os deltoides, trapézio e músculos das costas.</li>
+    </div>
+  </ul>
+  <p><h2>5.Tríceps</h2></p>
+  <div class="centro"><img src="https://www.mundoboaforma.com.br/wp-content/uploads/2015/05/tricepss-copy.jpg" width="300"></div>
+  <ul>
+    <div class="margem">
+      <li><u>Tríceps Pushdown:</u>Use uma polia alta com uma corda anexada.
+Segure a corda com as mãos e mantenha os cotovelos perto do corpo.
+Estenda os cotovelos para baixo, empurrando a corda em direção ao chão.
+Retorne à posição inicial de forma controlada.
+O tríceps pushdown isola bem os tríceps.</li>
+      <li><u>Tríceps Testa:</u>Deite-se em um banco com um halter ou barra na mão.
+Mantenha o braço estendido e abaixe o peso atrás da cabeça, dobrando os cotovelos.
+Estenda os cotovelos para levantar o peso de volta à posição inicial.
+O tríceps testa foca nos tríceps e no músculo longo da cabeça.</li>
+      <li><u>Tríceps Kickback:</u>Segure um halter em uma mão e ajoelhe-se no banco com o outro joelho.
+Incline o tronco para a frente e mantenha o cotovelo dobrado.
+Estenda o cotovelo para trás, movendo o antebraço.
+Retorne à posição inicial de forma controlada.
+O tríceps kickback foca nos tríceps e é ótimo para o isolamento.</li>
+    </div>
+  </ul>
+  <p><h2>6.Bíceps</h2></p>
+  <div class="centro"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Biceps_brachii.png" width="300"></div>
+  <ul>
+    <div class="margem">
+      <li><u>Rosca Direta:</u>Fique em pé segurando uma barra com as mãos afastadas na largura dos ombros e as palmas voltadas para cima.
+Mantenha os cotovelos próximos ao corpo e dobre-os para levantar a barra em direção aos ombros.
+Baixe a barra de volta à posição inicial de forma controlada.
+A rosca direta é um dos exercícios básicos mais populares para os bíceps.</li>
+      <li><u>Rosca Martelo:</u>Fique em pé segurando um halter em cada mão com as palmas voltadas para dentro (pegada martelo).
+Dobre o cotovelo para levantar os halteres em direção aos ombros.
+Baixe os halteres de volta à posição inicial de forma controlada.
+A rosca martelo trabalha tanto os bíceps quanto os músculos braquiais.</li>
+      <li><u>Rosca Inversa:</u>Fique em pé segurando uma barra com as mãos afastadas na largura dos ombros e as palmas voltadas para baixo.
+Mantenha os cotovelos próximos ao corpo e dobre-os para levantar a barra em direção aos ombros.
+Baixe a barra de volta à posição inicial de forma controlada.
+A rosca inversa trabalha os músculos do antebraço e também recruta os bíceps.</li>
+      <li><u>Rosca Alternada com Halteres:</u>Fique em pé segurando um halter em cada mão com as palmas voltadas para cima.
+Dobre o cotovelo para levantar um halter em direção ao ombro enquanto gira o punho.
+Baixe o halter de volta à posição inicial e repita com o outro braço.
+A rosca alternada com halteres ajuda a evitar que um braço compense o outro.</li>
+      <h1 class="centro"><i>Rotina de Treino Semanal</i></h1>
+    </div>
+  </ul>
+  <div class="tabela">
+  <table border="1">
+    <tr>
+      <th><h3>Segunda-feira</h3></th>
+      <th><h3>Terça-feira</h3></th>
+      <th><h3>Quarta-feira</h3></th>
+      <th><h3>Quinta-feira</h3></th>
+      <th><h3>Sexta-feira</h3></th>
+      <th><h3>Sábado</h3></th>
+      <th><h3>Domingo</h3></th>
+    </tr>
+    <tr>
+      <td>Peito</td>
+      <td>Costas</td>
+      <td>Perna</td>
+      <td>Peito</td>
+      <td>Costas</td>
+      <td>Perna</td>
+      <td>Descanso</td>
+    </tr>
+    <tr>
+      <td>Tríceps</td>
+      <td>Bíceps</td>
+      <td>Ombro</td>
+      <td>Tríceps</td>
+      <td>Bíceps</td>
+      <td>Ombro</td>
+      <td>Descanso</td>
+    </tr>
+  </table>
+  </div>
+  <h1 class="centro"><i>Playlist de Academia</i></h1>
+  <div class="centro">
+    <img src="https://play-lh.googleusercontent.com/cShys-AmJ93dB0SV8kE6Fl5eSaf4-qMMZdwEDKI5VEmKAXfzOqbiaeAsqqrEBCTdIEs" width="300">
+  <ul>
+    <li><h4>Caso queira uma playlist para motivá-lo durante o seu treino tente esssa:<button><a href="https://open.spotify.com/playlist/4PnnKFv4whbmOdqgNe27MP">playlist</a></button></h4></li>
+  </ul>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+Voce tem certeza que quer deletar o treinos "{{treino_costas.titulo}}"?
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" name="s" value="Sim">
+  <input type="submit" value="Nao">
+</form>

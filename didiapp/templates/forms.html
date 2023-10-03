@@ -1,0 +1,23 @@
+<h1>{{type}} Treino</h1>
+
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Titulo:</label>
+    <input name="titulo" value="{{ treino_costas.titulo }}">
+  </div>
+  <div>
+    <label>Area do Treino:</label>
+    <input name="area_do_treino" value="{{ treino_costas.area_do_treino }}">
+  </div>
+  <div>
+    <label>Descrição:</label>
+    <input name="descricao" value="{{ treino_costas.descricao }}">
+  </div>
+  <div>
+    <label>Duração:</label>
+    <input name='duracao' value="{{ treino_costas.duracao }}">
+  </div>
+  <input type="submit" value="Registrar">
+</form>
